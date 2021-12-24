@@ -1,0 +1,9 @@
+<template>
+    <lightning-card variant="Narrow" title="Sazby" icon-name="custom:custom90">
+        <lightning-button slot="actions" label="Sazby produktů"></lightning-button>
+        <div class="slds-p-horizontal_small" style="max-width: 523px">
+            <lightning-datatable hide-checkbox-column key-field="category" data={tableData} columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
