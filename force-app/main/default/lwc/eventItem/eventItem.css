@@ -1,0 +1,56 @@
+.wrapper {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wrapper > div {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 24px;
+}
+
+.dot-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    opacity: 0.75;
+}
+.dot,
+.dot-ping {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #0070d2;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contact {
+    font-size: 12px;
+    color: #0070d2;
+}
+
+.subject {
+    font-size: 10px;
+    color: #3e3e3c;
+    cursor: default;
+}
+
+.activity-date {
+    font-size: 12px;
+    color: #706e6b;
+}
+
+@keyframes ping {
+    75%,
+    100% {
+        transform: translateY(-50%) scale(2);
+        opacity: 0;
+    }
+}

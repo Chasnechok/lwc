@@ -1,0 +1,21 @@
+.col-2-wrapper > div {
+    min-height: 300px;
+}
+
+.col-2-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.col-2-wrapper > div > *:not(:first-child) {
+    margin-top: 24px;
+}
+
+.col-2-wrapper > div:first-child {
+    flex: 0.4;
+}
+.col-2-wrapper > div:last-child {
+    flex: 0.6;
+}

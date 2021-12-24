@@ -1,0 +1,21 @@
+<template>
+    <article>
+        <div class="button_group">
+            <template for:each={tabs} for:item="tab">
+                <template if:true={tab.selected}>
+                    <button class="selected" key={tab.code} data-nav={tab.code} onclick={handleNavigation}>
+                        {tab.name}
+                    </button>
+                </template>
+                <template if:false={tab.selected}>
+                    <button key={tab.code} data-nav={tab.code} onclick={handleNavigation}>{tab.name}</button>
+                </template>
+            </template>
+        </div>
+    </article>
+    <section>
+        <template if:true={isProfileTab}>
+            <c-my-profile-tab></c-my-profile-tab>
+        </template>
+    </section>
+</template>

@@ -1,0 +1,21 @@
+ul > li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+ul > li {
+    font-size: 13px;
+    color: #16325c;
+    border-radius: 4px;
+    border: 1px solid #dddbda;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+:host {
+    --sds-c-card-spacing-block: 1rem;
+    --sds-c-card-spacing-inline: 1rem;
+    --sds-c-card-header-spacing-inline: 0;
+}

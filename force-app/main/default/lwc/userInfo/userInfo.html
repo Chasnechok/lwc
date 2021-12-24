@@ -1,0 +1,85 @@
+<template>
+    <lightning-card variant="Narrow" title="Základní údaje" icon-name="standard:contact">
+        <template if:false={isEditModeEnabled}>
+            <lightning-button-group slot="actions">
+                <lightning-button label="Aktualizovat údaje z ARESu"></lightning-button>
+                <lightning-button onclick={handleEditModeSwitch} label="Upravit kontaktní údaje"></lightning-button>
+            </lightning-button-group>
+        </template>
+        <div class="slds-p-horizontal_small">
+            <template if:false={isEditModeEnabled}>
+                <lightning-record-view-form record-id={recordId} object-api-name="User">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-output-field variant="label-stacked" field-name="IC__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="DIC__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="obchrejstrik__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="sidlo__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="bankovni_ucet__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-output-field variant="label-stacked" field-name="rodne_cislo__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="birthday__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="Email">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="Phone">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="Address">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+            </template>
+            <template if:true={isEditModeEnabled}>
+                <lightning-record-edit-form record-id={recordId} object-api-name="User">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-output-field variant="label-stacked" field-name="IC__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="DIC__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="obchrejstrik__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="sidlo__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="bankovni_ucet__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-output-field variant="label-stacked" field-name="rodne_cislo__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="birthday__c">
+                            </lightning-output-field>
+                            <lightning-output-field variant="label-stacked" field-name="Email">
+                            </lightning-output-field>
+                            <lightning-input-field variant="label-stacked" field-name="Phone"> </lightning-input-field>
+                            <lightning-input-field variant="label-stacked" field-name="Address">
+                            </lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-align_absolute-center slds-p-around_medium">
+                        <lightning-button
+                            class="slds-m-around_xx-small"
+                            onclick={handleEditModeSwitch}
+                            label="Storno"
+                        ></lightning-button>
+                        <lightning-button
+                            class="slds-m-around_xx-small"
+                            label="Uložit"
+                            type="submit"
+                            variant="brand"
+                            onclick={handleEditModeSwitch}
+                        ></lightning-button>
+                    </div>
+                </lightning-record-edit-form>
+            </template>
+        </div>
+    </lightning-card>
+</template>

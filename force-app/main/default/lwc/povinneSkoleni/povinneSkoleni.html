@@ -1,0 +1,20 @@
+<template>
+    <lightning-card icon-name="custom:custom16" title="Povinné školení">
+        <ul>
+            <template for:each={studies} for:item="study">
+                <li key={study.Id}>
+                    <p>
+                        <template if:true={study.done}> ✅ </template>
+                        <template if:false={study.done}> ⛔️ </template>
+                        {study.name}
+                    </p>
+                    <lightning-button
+                        label="Absolvovat"
+                        title="Absolvovat"
+                        class="slds-m-left_x-small"
+                    ></lightning-button>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
