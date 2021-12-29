@@ -1,0 +1,61 @@
+:host {
+    --tw-ring-color: rgb(209 213 219);
+    --tw-ring-offset-shadow: inset 0 0 0 0px;
+    --tw-ring-shadow: inset 0 0 0 2px var(--tw-ring-color);
+}
+
+table {
+    text-indent: 0;
+    border-collapse: collapse;
+}
+
+thead {
+    color: #514f4d;
+    font-size: 12px;
+    user-select: none;
+}
+
+tbody {
+    color: #3e3e3c;
+    font-size: 13px;
+}
+
+tr > * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    padding: 8px;
+    cursor: default;
+}
+
+tr {
+    border-top: 1px solid #dddbda;
+}
+
+tr:last-child {
+    border-bottom: 1px solid #dddbda;
+}
+
+tbody > tr:nth-child(odd),
+tbody > tr:nth-child(even) > *:hover {
+    background-color: #ffffff;
+}
+
+tbody > tr:nth-child(odd) > *:hover {
+    background-color: #f3f2f2;
+}
+
+tbody th {
+    cursor: pointer;
+    color: #0070d2;
+}
+
+tbody > tr > *:hover {
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+tbody > tr:nth-child(odd) > *:hover,
+tbody > tr:nth-child(even),
+thead > tr {
+    background-color: #f3f2f2;
+}

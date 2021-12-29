@@ -1,0 +1,27 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 4px;
+}
+.flex-container > *:first-child {
+    flex: 1;
+}
+.user-image {
+    min-width: 116px;
+    min-height: 116px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+lightning-output-field {
+    border-bottom: 1px solid #dddbda;
+}
+
+@media (min-width: 640px) {
+    .flex-container {
+        flex-direction: row;
+    }
+}

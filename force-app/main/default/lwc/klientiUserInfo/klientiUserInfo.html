@@ -1,0 +1,75 @@
+<template>
+    <lightning-card variant="Narrow" title="Základní údaje" icon-name="standard:contact">
+        <template if:false={isEditModeEnabled}>
+            <lightning-button slot="actions" onclick={handleEditModeSwitch} label="Upravit údaje"></lightning-button>
+        </template>
+        <div class="slds-p-horizontal_small">
+            <div class="flex-container">
+                <template if:false={isEditModeEnabled}>
+                    <lightning-record-view-form class="" record-id={recordId} object-api-name="User">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <lightning-output-field variant="label-stacked" field-name="rodne_cislo__c">
+                                </lightning-output-field>
+                                <lightning-output-field variant="label-stacked" field-name="birthday__c">
+                                </lightning-output-field>
+                                <lightning-output-field variant="label-stacked" field-name="ManagerId">
+                                </lightning-output-field>
+                            </div>
+                            <div class="slds-col">
+                                <lightning-output-field variant="label-stacked" field-name="Email">
+                                </lightning-output-field>
+                                <lightning-output-field variant="label-stacked" field-name="Phone">
+                                </lightning-output-field>
+                                <lightning-output-field variant="label-stacked" field-name="Address">
+                                </lightning-output-field>
+                            </div>
+                        </div>
+                    </lightning-record-view-form>
+                </template>
+                <template if:true={isEditModeEnabled}>
+                    <lightning-record-edit-form class="" record-id={recordId} object-api-name="User">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <lightning-input-field variant="label-stacked" field-name="rodne_cislo__c">
+                                </lightning-input-field>
+                                <lightning-input-field variant="label-stacked" field-name="birthday__c">
+                                </lightning-input-field>
+                                <lightning-input-field variant="label-stacked" field-name="ManagerId">
+                                </lightning-input-field>
+                            </div>
+                            <div class="slds-col">
+                                <lightning-input-field variant="label-stacked" field-name="Email">
+                                </lightning-input-field>
+                                <lightning-input-field variant="label-stacked" field-name="Phone">
+                                </lightning-input-field>
+                                <lightning-output-field variant="label-stacked" field-name="Address">
+                                </lightning-output-field>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="slds-align_absolute-center slds-p-around_medium">
+                            <lightning-button
+                                class="slds-m-around_xx-small"
+                                onclick={handleEditModeSwitch}
+                                label="Storno"
+                            ></lightning-button>
+                            <lightning-button
+                                class="slds-m-around_xx-small"
+                                label="Uložit"
+                                type="submit"
+                                variant="brand"
+                                onclick={handleEditModeSwitch}
+                            ></lightning-button>
+                        </div>
+                    </lightning-record-edit-form>
+                </template>
+                <div class="user-image">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" ></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

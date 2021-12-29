@@ -1,0 +1,29 @@
+<template>
+    <lightning-card variant="Narrow" title="Příležitosti custom table" icon-name="standard:opportunity">
+        <lightning-button slot="actions" label="Přidat novou příležitost"></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <table class="">
+                <thead>
+                    <tr>
+                        <th scope="col">Název</th>
+                        <th scope="col">Oblast</th>
+                        <th scope="col">Datum vytvoření</th>
+                        <th scope="col">Stav</th>
+                        <th scope="col">Datum poslední aktivity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={tableData} for:item="opportunity">
+                        <tr key={opportunity.Id}>
+                            <th scope="row">{opportunity.Name}</th>
+                            <td scope="row">{opportunity.Category__c}</td>
+                            <td scope="row">{opportunity.DateCreated__c}</td>
+                            <td scope="row">{opportunity.StageName}</td>
+                            <td scope="row">{opportunity.CloseDate}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

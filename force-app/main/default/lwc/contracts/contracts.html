@@ -1,0 +1,15 @@
+<template>
+    <lightning-card variant="Narrow" title="Smlouvy" icon-name="standard:contract">
+        <lightning-button slot="actions" label="Přidat novou smlouvu"></lightning-button>
+        <div class="slds-p-horizontal_small">
+            <lightning-datatable
+                is-loading={isLoading}
+                hide-checkbox-column
+                key-field="Id"
+                data={tableData}
+                columns={columns}
+            >
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
