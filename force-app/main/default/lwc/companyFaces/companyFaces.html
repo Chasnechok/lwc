@@ -1,0 +1,80 @@
+<template>
+    <article class="rounded-sm border border-gray-300 bg-white text-gray-800">
+        <header class="flex py-2 px-4 gap-2 items-center bg-gray-200 shadow-md">
+            <div class="">
+                <lightning-icon
+                    size="medium"
+                    icon-name="custom:custom15"
+                    alternative-text="contactsIcon"
+                ></lightning-icon>
+            </div>
+            <h2 class="font-semibold text-lg select-none">Kontakty</h2>
+        </header>
+        <div class="p-4 xl:px-12">
+            <template for:each={divisions} for:item="division">
+                <fieldset class="my-4" key={division.type}>
+                    <legend class="bg-gray-200 w-full rounded-sm text-gray-600 font-semibold p-2 mb-4 select-none">
+                        {division.type}
+                    </legend>
+                    <div class="grid gap-4 md:grid-cols-2">
+                        <template for:each={division.people} for:item="contact">
+                            <div key={contact.email} class="flex gap-x-4 flex-1">
+                                <template if:true={contact.image}>
+                                    <img
+                                        src={contact.image}
+                                        alt={contact.name}
+                                        class="max-w-full lg:max-w-[200px] object-cover rounded-sm"
+                                    />
+                                </template>
+                                <template if:false={contact.image}>
+                                    <div class="max-w-full lg:max-w-[200px] w-full flex justify-center items-center">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-12 w-12"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                </template>
+                                <div class="cursor-default">
+                                    <template if:true={contact.name}>
+                                        <div class="py-2 flex">
+                                            <span class="w-32 pr-4">Jméno a příjmení</span>
+                                            <span class="">{contact.name}</span>
+                                        </div>
+                                    </template>
+                                    <template if:true={contact.role}>
+                                        <div class="py-2 flex">
+                                            <span class="w-32 pr-4">Role</span>
+                                            <span class="">{contact.role}</span>
+                                        </div>
+                                    </template>
+                                    <template if:true={contact.phone}>
+                                        <div class="py-2 flex">
+                                            <span class="w-32 pr-4">Telefon</span>
+                                            <span class="cursor-auto">{contact.phone}</span>
+                                        </div>
+                                    </template>
+                                    <template if:true={contact.email}>
+                                        <div class="py-2 flex">
+                                            <span class="w-32 pr-4">E-mail</span>
+                                            <a class="cursor-pointer" href={contact.emailLink}>{contact.email}</a>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </fieldset>
+            </template>
+        </div>
+    </article>
+</template>

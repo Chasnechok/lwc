@@ -1,0 +1,22 @@
+<template>
+    <article class="rounded-sm border border-gray-300 bg-white text-gray-800">
+        <header class="flex py-2 px-4 gap-2 items-center bg-gray-200 shadow-md">
+            <div class="">
+                <lightning-icon
+                    size="medium"
+                    icon-name="standard:email_chatter"
+                    alternative-text="emailIcon"
+                ></lightning-icon>
+            </div>
+            <h2 class="font-semibold text-lg select-none">Sběrné emaily</h2>
+        </header>
+        <div class="p-4 xl:px-12 divide-y md:divide-y-0 divide-gray-300">
+            <template for:each={emails} for:item="email">
+                <div key={email.email} class="flex gap-x-2 py-2 flex-col md:flex-row">
+                    <a class="w-40 underline" href={email.link}>{email.email}</a>
+                    <span>{email.description}</span>
+                </div>
+            </template>
+        </div>
+    </article>
+</template>

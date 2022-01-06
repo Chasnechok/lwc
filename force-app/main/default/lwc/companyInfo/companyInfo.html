@@ -1,0 +1,76 @@
+<template>
+    <article class="rounded-sm border border-gray-300 bg-white text-gray-800">
+        <header class="flex py-2 px-4 gap-2 items-center bg-gray-200 shadow-md">
+            <div class="">
+                <lightning-icon
+                    size="medium"
+                    icon-name="custom:custom24"
+                    alternative-text="CompanyIcon"
+                ></lightning-icon>
+            </div>
+            <h2 class="font-semibold text-lg select-none">Informace o společnosti</h2>
+        </header>
+        <div class="flex justify-center xl:justify-between py-2 px-4 xl:px-12 flex-wrap gap-x-12">
+            <div class="py-4">
+                <img src={holverLogoUrl} alt="holverLogo" />
+                <p class="py-4 text-lg lg:text-xl text-[#032d62]">555 131 602</p>
+                <div class="flex flex-col md:flex-row gap-4 lg:gap-x-12 justify-between">
+                    <div class="border-t border-gray-300 pt-2">
+                        <p class="text-gray-600 py-2 font-semibold">Provozní doba</p>
+                        <div class="flex flex-col gap-y-2 lg:pl-4">
+                            <div class="flex gap-x-2 justify-between">
+                                <span>po</span>
+                                <span>8 - 16:30</span>
+                            </div>
+                            <div class="flex gap-x-2 justify-between">
+                                <span>út</span>
+                                <span>8 - 16:30</span>
+                            </div>
+                            <div class="flex gap-x-2 justify-between">
+                                <span>st</span>
+                                <span>8 - 16:30</span>
+                            </div>
+                            <div class="flex gap-x-2 justify-between">
+                                <span>čt</span>
+                                <span>8 - 16:30</span>
+                            </div>
+                            <div class="flex gap-x-2 justify-between">
+                                <span>pá</span>
+                                <span>8 - 15:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-300 pt-2">
+                        <p class="text-gray-600 py-2 font-semibold">Čísla účtů</p>
+                        <div class="flex flex-col gap-y-2 lg:pl-4">
+                            <span>2702043733/2010 (provize)</span>
+                            <span>2202043737/2010 (poplatky za licence)</span>
+                            <span>2502043739/2010 (penny transfer)</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-300 pt-2">
+                        <p class="text-gray-600 py-2 font-semibold">Adresa</p>
+                        <div class="flex flex-col gap-y-2 lg:pl-4">
+                            <span>Hrušovská 3203/13A</span>
+                            <span>702 00 Ostrava</span>
+                            <span>IČ: 25860399</span>
+                            <a href="https://www.holver.cz" rel="noreferrer" target="_blank">www.holver.cz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 xl:max-w-3xl min-w-[24rem] min-h-[24rem] xl:min-h-full">
+                <iframe
+                    data-service="google-maps"
+                    data-placeholder-image="https://holver.cz/wp-content/plugins/complianz-gdpr/assets/images/placeholders/google-maps-minimal-1280x920.jpg"
+                    class="cmplz-placeholder-element cmplz-no-video cmplz-processed cmplz-activated"
+                    data-src-cmplz="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.588753403127!2d18.283445434511595!3d49.85018429156203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713e2dfe65a89e9%3A0xa0c57bd7f5547e10!2zSHJ1xaFvdnNrw6EgMzIwMy8xM0EsIDcwMiAwMCBNb3JhdnNrw6EgT3N0cmF2YSBhIFDFmcOtdm96!5e0!3m2!1scs!2scz!4v1638968961167!5m2!1scs!2scz"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.588753403127!2d18.283445434511595!3d49.85018429156203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713e2dfe65a89e9%3A0xa0c57bd7f5547e10!2zSHJ1xaFvdnNrw6EgMzIwMy8xM0EsIDcwMiAwMCBNb3JhdnNrw6EgT3N0cmF2YSBhIFDFmcOtdm96!5e0!3m2!1scs!2scz!4v1638968961167!5m2!1scs!2scz"
+                    style="border: 0; width: 100%; height: 100%"
+                    allowfullscreen=""
+                    data-deferlazy="1"
+                ></iframe>
+            </div>
+        </div>
+    </article>
+</template>
