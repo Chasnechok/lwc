@@ -24,24 +24,12 @@
   display: grid;
 }
 
-.h-auto {
-  height: auto;
-}
-
 .h-12 {
   height: 3rem;
 }
 
-.max-h-40 {
-  max-height: 10rem;
-}
-
 .w-full {
   width: 100%;
-}
-
-.w-\[200px\] {
-  width: 200px;
 }
 
 .w-12 {
@@ -146,6 +134,16 @@
   padding-right: 1rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -189,21 +187,34 @@
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:max-h-full {
-    max-height: 100%;
-  }
-
   .lg\:max-w-\[200px\] {
     max-width: 200px;
   }
 }
 
 @media (min-width: 1280px) {
-  .xl\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .xl\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
